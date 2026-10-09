@@ -1,0 +1,228 @@
+/*
+Theme Name: Buildora
+Theme URI: https://github.com/Nourhb/buildora-construction-theme
+Author: Nour El Houda Bouajila
+Author URI: https://nour-el-houda-bouajila.rf.gd/
+Description: Buildora is a bold Full Site Editing theme crafted for construction and renovation companies. Industrial charcoal and safety-orange design, quote-request hero, services grid, project galleries, process steps, animated stats, testimonials and quote CTAs — everything a builder needs to win clients online.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.9
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: buildora
+Tags: full-site-editing, block-patterns, block-styles, construction, renovation, builder, contractor, custom-colors, custom-logo, featured-images, threaded-comments, translation-ready, wide-blocks, editor-style
+*/
+
+/* ---------- Base polish ---------- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Skip link visibility */
+.skip-link:focus {
+	z-index: 99999;
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.buildora-reveal {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity .7s ease, transform .7s ease;
+}
+
+.buildora-reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+/* ---------- Section kickers ---------- */
+
+.buildora-kicker {
+	display: inline-block;
+	padding: .4rem 1rem;
+	border-radius: 999px;
+	font-size: .72rem;
+	font-weight: 700;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+	background: #ff6b1a;
+	color: #121316;
+}
+
+.buildora-kicker--dark {
+	background: #121316;
+	color: #ffb020;
+}
+
+/* ---------- Project cards ---------- */
+
+.buildora-project-card {
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.buildora-project-card img {
+	transition: transform .6s ease;
+	display: block;
+	width: 100%;
+}
+
+.buildora-project-card:hover img {
+	transform: scale(1.05);
+}
+
+.buildora-project-tag {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	background: #ff6b1a;
+	color: #121316;
+	font-size: .72rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	padding: .35rem .8rem;
+	border-radius: 4px;
+}
+
+/* ---------- Service cards ---------- */
+
+.is-style-service-card {
+	border: 1px solid #e4e6ea;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform .35s ease, box-shadow .35s ease;
+	background: #ffffff;
+}
+
+.is-style-service-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 24px 48px -16px rgba(18, 19, 22, .22);
+}
+
+.is-style-service-card img {
+	display: block;
+	width: 100%;
+}
+
+/* ---------- Quote form ---------- */
+
+.buildora-quote-form input,
+.buildora-quote-form select,
+.buildora-quote-form textarea {
+	width: 100%;
+	padding: .85rem 1rem;
+	border: 1px solid #d8dbe0;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-family: inherit;
+	background: #ffffff;
+	color: #1c1e21;
+}
+
+.buildora-quote-form input:focus,
+.buildora-quote-form select:focus,
+.buildora-quote-form textarea:focus {
+	outline: 2px solid #ff6b1a;
+	outline-offset: 1px;
+	border-color: #ff6b1a;
+}
+
+.buildora-quote-form label {
+	display: block;
+	font-size: .85rem;
+	font-weight: 600;
+	margin-bottom: .4rem;
+	color: #1c1e21;
+}
+
+/* ---------- Step numbers ---------- */
+
+.buildora-step {
+	position: relative;
+}
+
+.buildora-step-number {
+	font-family: "Oswald", "Arial Narrow", sans-serif;
+	font-size: 3.5rem;
+	font-weight: 700;
+	line-height: 1;
+	color: transparent;
+	-webkit-text-stroke: 2px #ff6b1a;
+}
+
+/* ---------- Buttons ---------- */
+
+.is-style-safety-outline .wp-block-button__link {
+	background: transparent;
+	color: #ff6b1a;
+	border: 2px solid #ff6b1a;
+}
+
+.is-style-safety-outline .wp-block-button__link:hover {
+	background: #ff6b1a;
+	color: #121316;
+}
+
+/* ---------- Back to top ---------- */
+
+.buildora-to-top {
+	position: fixed;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	width: 3rem;
+	height: 3rem;
+	border: none;
+	border-radius: 8px;
+	background: #ff6b1a;
+	color: #121316;
+	font-size: 1.4rem;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease, transform .3s ease;
+	z-index: 999;
+	box-shadow: 0 12px 28px -8px rgba(255, 107, 26, .55);
+}
+
+.buildora-to-top.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.buildora-to-top:hover {
+	transform: translateY(-3px);
+}
+
+/* ---------- Hazard stripe divider ---------- */
+
+.buildora-hazard {
+	height: 10px;
+	background: repeating-linear-gradient(
+		-45deg,
+		#ff6b1a 0 16px,
+		#121316 16px 32px
+	);
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 781px) {
+	.buildora-step-number {
+		font-size: 2.5rem;
+	}
+}
